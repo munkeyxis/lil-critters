@@ -2,15 +2,9 @@
 
 public class Metabolism : MonoBehaviour 
 {
-    private float energyQuantity;
-    private float baseMetabolicRate;
-
-    private void Start() 
-    {
-        // TODO: initial values should be set by genetics.
-        energyQuantity = 50;
-        baseMetabolicRate = 1;
-    }
+    // TODO: initial values should be set by genetics.
+    public float energyQuantity;
+    public float baseMetabolicRate;
 
     private void Update()
     {
