@@ -18,7 +18,7 @@ public class Vision : MonoBehaviour
             return;
         }
 
-        Debug.Log("No sensory stimulous coming from vision.");
+        Debug.Log("No sensory stimulous coming from vision."); // Temporary
         brain.ViewedNothing();
     }
 
@@ -35,12 +35,13 @@ public class Vision : MonoBehaviour
 
     private void OnTriggerExit()
     {
+        // BUG: This isn't called when the trigger is Destroyed. Need workaround.
         seesSomething = false;
     }
 
     private void LogTrigger(Collider other)
     {
         OrganismColors otherColor = other.GetComponent<OrganismColor>().color;
-        Debug.Log("Triggered by something that is the color " + otherColor.ToString());
+        Debug.Log("Triggered by something that is the color " + otherColor.ToString()); // Temporary
     }
 }
