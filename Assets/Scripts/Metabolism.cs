@@ -16,4 +16,9 @@ public class Metabolism : MonoBehaviour
     {
         energyQuantity -= baseMetabolicRate * Time.deltaTime;
     }
+
+    public void GainEnergy(float amount)
+    {
+        energyQuantity += amount;
+    }
 }
