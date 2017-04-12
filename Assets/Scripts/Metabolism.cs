@@ -12,6 +12,11 @@ public class Metabolism : MonoBehaviour
         DeathCheck();
     }
 
+    public float GetEnergyQuantity()
+    {
+        return energyQuantity;
+    }
+
     public void GainEnergy(float amount)
     {
         energyQuantity += amount;
