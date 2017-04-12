@@ -15,10 +15,19 @@ public class Metabolism : MonoBehaviour
     private void Update()
     {
         energyQuantity -= baseMetabolicRate * Time.deltaTime;
+        DeathCheck();
     }
 
     public void GainEnergy(float amount)
     {
         energyQuantity += amount;
+    }
+
+    private void DeathCheck()
+    {
+        if(energyQuantity <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
