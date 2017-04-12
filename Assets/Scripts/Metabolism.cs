@@ -22,6 +22,11 @@ public class Metabolism : MonoBehaviour
         energyQuantity += amount;
     }
 
+    public void LoseEnergy(float amount)
+    {
+        energyQuantity -= amount;
+    }
+
     private void DeathCheck()
     {
         if(energyQuantity <= 0)
