@@ -7,7 +7,7 @@ public class Metabolism : MonoBehaviour
 
     private void Start() 
     {
-        // TODO: initial eneryQuantity should be set by genetics.
+        // TODO: initial values should be set by genetics.
         energyQuantity = 50;
         baseMetabolicRate = 1;
     }
