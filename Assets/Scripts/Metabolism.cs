@@ -24,7 +24,7 @@ public class Metabolism : MonoBehaviour
 
     public void LoseEnergy(float amount)
     {
-        energyQuantity -= amount;
+        energyQuantity -= amount * baseMetabolicRate;
     }
 
     private void DeathCheck()
