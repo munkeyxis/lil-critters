@@ -16,7 +16,7 @@ public class Vision : MonoBehaviour
     {
         if(seesSomething)
         {
-            if (thingSeen) // Have to do this because OnTriggerExit is not called when the object is destroyed
+            if(thingSeen) // Have to do this because OnTriggerExit is not called when the object is destroyed
             {
                 return;
             }
