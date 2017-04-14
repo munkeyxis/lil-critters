@@ -23,20 +23,20 @@ public class Vision : MonoBehaviour
             seesSomething = false;
         }
 
-        Debug.Log("No sensory stimulous coming from vision."); // Temporary
         brain.ViewedNothing();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        LogTrigger(other);
         seesSomething = true;
         thingSeen = other;
     }
 
     private void OnTriggerStay(Collider other) 
     {
-        LogTrigger(other);
-        brain.ViewedColor();
+        brain.ViewedColor(); // BUG: critters spawn with something in their Vision collider, this method triggers before Start().
+        // Need workaround. Move brain assignment to Awake() or delay activating Vision collider.
     }
 
     private void OnTriggerExit()
