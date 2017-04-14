@@ -4,6 +4,7 @@ public class Vision : MonoBehaviour
 {
     private CritterBrain brain;
     private bool seesSomething;
+    private Collider thingSeen;
 
     private void Start()
     {
@@ -15,16 +16,21 @@ public class Vision : MonoBehaviour
     {
         if(seesSomething)
         {
-            return;
+            if (thingSeen) // Have to do this because OnTriggerExit is not called when the object is destroyed
+            {
+                return;
+            }
+            seesSomething = false;
         }
 
         Debug.Log("No sensory stimulous coming from vision."); // Temporary
         brain.ViewedNothing();
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
         seesSomething = true;
+        thingSeen = other;
     }
 
     private void OnTriggerStay(Collider other) 
@@ -35,7 +41,8 @@ public class Vision : MonoBehaviour
 
     private void OnTriggerExit()
     {
-        // BUG: This isn't called when the trigger is Destroyed. Need workaround.
+        // BUG: This isn't called when the trigger is Destroyed
+        // Work around: Update() checks that the seenObject still exists and will set to false if it is not
         seesSomething = false;
     }
 
