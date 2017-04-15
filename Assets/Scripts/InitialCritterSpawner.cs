@@ -11,7 +11,7 @@ public class InitialCritterSpawner : MonoBehaviour
 
     private float y = -0.45f;
 
-    private void Start() 
+    private void Awake() 
     {
         int instantiatedCritters = 0;
         while (instantiatedCritters < initialQuantity)
