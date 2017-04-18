@@ -35,8 +35,7 @@ public class Vision : MonoBehaviour
 
     private void OnTriggerStay(Collider other) 
     {
-        brain.ViewedColor(); // BUG: critters spawn with something in their Vision collider, this method triggers before Start().
-        // Need workaround. Move brain assignment to Awake() or delay activating Vision collider.
+        brain.ViewedColor();
     }
 
     private void OnTriggerExit()
