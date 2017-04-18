@@ -15,13 +15,13 @@ public class CritterBrain : MonoBehaviour
     public void ViewedNothing()
     {
         // TODO: Use neural network to connect stimulous with action
-        movement.TurnClockwise();
+        movement.QueueTurnClockwise();
     }
     
     public void ViewedColor()
     {
         // TODO: Use neural network to connect stimulous with action
-        movement.Forward();
+        movement.QueueForward();
     }
 
     // OnCollisionStay is acting as "physical" stimulous
