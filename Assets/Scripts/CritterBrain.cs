@@ -4,12 +4,16 @@ public class CritterBrain : MonoBehaviour
 {
     private CritterMovement movement;
     private CritterConsume consume;
+    private NeuralNetwork brain;
 
     private void Start() 
     {
         // TODO: Detect all attached scripts
         movement = GetComponent<CritterMovement>();
         consume = GetComponent<CritterConsume>();
+        brain = new NeuralNetwork();
+        Debug.Log("=============");
+        brain.StimulateNetwork();
     }
 
     public void ViewedNothing()
